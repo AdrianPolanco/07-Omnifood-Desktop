@@ -1,0 +1,194 @@
+/**************************
+****GENERAL STYLES*********
+***************************/
+
+/*
+
+*/
+
+html {
+    /*font-size: 10px;*/ /*Cambiando el tamaño de referencia para las unidades rem
+    
+    Al ahora ser 1 rem = 10px en lugar de 1 rem = 16px, sera mucho más facil calcular
+    las unidades en rem*/
+
+    font-size: 62.5%;
+    /*En lugar de usar font-size: 10px; es mejor usarlo con 62.5% ya que es más flexible
+    y hace posible que el usuario cambie el tamaño de la fuente mientras que usando 10px esto no es posible*/
+
+    /*El 62.5% sale del porcentaje que representa 10 de 16px que es el valor por defecto del font-size
+    
+    16px * 0.625 = 10px, el tamaño seguira siendo el mismo que si le asignaramos font-size: 10px;
+    pero con el bono añadido de que es flexible al cambio de fuente que pueda hacer el usuario*/
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden; /*Todo elemento que desborde el body horizontalmente se ocultara,
+    pero solo funciona si no hay nada posicionado absolutamente respecto al body*/
+}
+
+/*.test {
+    background-color: red;
+    /*width: 1000px;
+    max-width: 100rem; /*El rem tiene su papel en el responsive design ya que cuando se use
+    el media query para pasarlo a la version de celular, para cambiar la fuente en vez de escribir 
+    el codigo de nuevo, simplemente se modificara el font-size del elemento html y automaticamente
+    cambiará todo el font-size y el tamaño de la pagina
+    padding: 100px;
+    font-size: 2rem;
+}*/
+
+/*******************************
+****REUSABLE CLASSES************
+********************************/
+
+.grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+.grid--center-vertical {
+    align-items: center;
+}
+
+.container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+.grid--2--cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3--cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4--cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/*.grid--5--cols {
+    grid-template-columns: repeat(5, 1fr);
+}*/
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    border-radius: 9px;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+    background-color: #e67e22;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.btn--full:hover,
+.btn--full:active {
+    background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+    background-color: #fff;
+    color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+    background-color: #fdf2e9;
+
+    /* border: 3px solid #fff; */
+
+    /* Trick to add border inside */
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.subheading {
+    display: block;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #333;
+
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary,
+.heading-tertiary {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #333;
+}
+
+*:focus {
+    outline: none;
+    outline: 4px dotted #e67e22;
+    box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+    text-align: center;
+}
+
+strong {
+    font-weight: 500;
+}

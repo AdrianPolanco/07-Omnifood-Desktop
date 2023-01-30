@@ -1,0 +1,313 @@
+/*IMPORTANTE!!!!!
+
+En los media queries, 1rem SIEMPRE sera igual al valor por default del font-size de HTML, es decir, sera igual a 16px
+1em es igual a 1rem, debido a que rem tiene un bug en algunos navegadores al usarlo como breakpoints media queries estaremos
+usando unidades em en lugar de rem*/
+
+/*1em = 16px*/
+
+/************************************
+*****SMALLER DESKTOP BELOW 1344PX****
+*************************************/
+
+/*16px x 84 = 1344px*/
+@media (max-width: 84em) {
+    /*Dentro del media query podremos seguir usando rem, ya que seguira siendo el mismo font-size del html
+    que pusimos nosotros*/
+    .hero {
+        max-width: 128rem;
+    }
+
+    .heading-primary {
+        font-size: 4.4rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/**************************************
+*****LANDSCAPE TABLETS BELOW 1200PX****
+***************************************/
+
+/*16PX X 75 = 1200PX*/
+
+@media (max-width: 75em) {
+    /*9px/16px = 0.5625 = 56.25%*/
+
+    /*Usando la ventaja de trabajar con unidades rem
+    desde el inicio del proyecto*/
+    html {
+        font-size: 56.25%;
+    }
+
+    .grid {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+
+    .heading-secondary {
+        font-size: 3.6rem;
+    }
+
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .main-nav-list {
+        gap: 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+
+    .testimonials-container {
+        padding: 9.6rem 3.2rem;
+    }
+}
+
+/****************************
+*****TABLETS BELOW 944PX****
+*****************************/
+
+@media (max-width: 59em) {
+    html {
+        font-size: 50%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0 8rem;
+        gap: 6.4rem;
+    }
+
+    .hero-text-box,
+    .hero-img-box {
+        text-align: center;
+    }
+
+    .hero-img {
+        width: 60%;
+    }
+
+    .delivered-meals {
+        justify-content: center;
+        margin-top: 3.2rem;
+    }
+
+    .logos img {
+        height: 2.4rem;
+    }
+
+    .step-number {
+        font-size: 7.4rem;
+    }
+
+    .meal-content {
+        padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+    }
+
+    .section-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .cta {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .cta-form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-form {
+        margin-top: 1.2rem;
+    }
+
+    .btn-mobile-nav {
+        display: block;
+    }
+
+    .main-nav {
+        background-color: rgba(255, 255, 255, 0.97);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease-in;
+
+        /*Hide the menu with
+        display: none;
+        ALLOWS NO TRANSITIONS AT ALL*/
+
+        /*Hidding the element visually*/
+        opacity: 0;
+
+        /*Disabilitng the access of the mouse and keyboard to the element*/
+        pointer-events: none;
+
+        /*Hidding it from screen readers*/
+        visibility: hidden;
+    }
+
+    .nav-open .main-nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .nav-open .icon-mobile-nav[name="close-outline"] {
+        display: block;
+    }
+
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+    }
+
+    .main-nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+
+    .main-nav-link:link,
+    .main-nav-link:visited {
+        font-size: 3rem;
+    }
+
+    /*********************************
+    *****SMALL TABLETS BELOW 704PX****
+    **********************************/
+
+    @media (max-width: 44em) {
+        .grid--3--cols,
+        .grid--4--cols {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .diets {
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+
+        .heading-secondary {
+            margin-bottom: 4.8rem;
+        }
+
+        .pricing-plan {
+            width: 100%;
+        }
+
+        .grid-footer {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .logo-col,
+        .address-col {
+            grid-column: span 3;
+        }
+
+        .nav-col {
+            grid-row: 1;
+            grid-column: span 2;
+            margin-bottom: 3.2rem;
+        }
+    }
+}
+/*********************************
+    *****PHONE BELOW 544PX****
+    **********************************/
+
+@media (max-width: 34em) {
+    .grid {
+        row-gap: 4.8rem;
+    }
+
+    .grid--2--cols,
+    .grid--3--cols,
+    .grid--4--cols {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .btn,
+    .btn:link,
+    .btn:visited {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .section-hero {
+        padding: 2.4rem 0 6.4rem 0;
+    }
+
+    .hero {
+        padding: 0 3.2rem;
+    }
+
+    .hero-img {
+        width: 80%;
+    }
+
+    .logos img {
+        height: 1.2rem;
+    }
+
+    .step-img-box:nth-child(2) {
+        grid-row: 1;
+    }
+
+    .step-img-box:nth-child(6) {
+        grid-row: 5;
+    }
+
+    .step-img-box {
+        /*This attribute only affects the
+        element itself without affecting the others
+        around it*/
+        transform: translateY(8rem);
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-text {
+        font-size: 3rem;
+    }
+
+    .pricing-plan-complete::after {
+        top: 6%;
+        right: -10%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .cta {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-text-box {
+        padding: 3.2rem;
+    }
+
+    .cta-img-box {
+        height: 32rem;
+        grid-row: 1;
+    }
+}
