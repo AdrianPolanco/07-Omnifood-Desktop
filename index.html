@@ -687,7 +687,7 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="container grid grid--5--cols">
+            <div class="container grid grid-footer">
                 <div class="logo-col">
                     <a href="#" class="footer-logo">
                         <img
@@ -725,8 +725,8 @@
                     </ul>
 
                     <p class="copyright">
-                        Copyright &copy; 2023 by Omnifood Inc. All rights
-                        reserved.
+                        Copyright &copy; <span class="year">2022</span> by
+                        Omnifood Inc. All rights reserved.
                     </p>
                 </div>
 
@@ -797,5 +797,9 @@
             nomodule
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         ></script>
+
+        <!--defer hace que el HTML no espere por que cargue el script, más bien este cargara en segundo plano
+        y se ejecutará cuando el DOM es decir, el HTML este listo-->
+        <script defer src="script.js"></script>
     </body>
 </html>
